@@ -1,4 +1,4 @@
-package br.unisinos.ex;
+package br.unisinos.commom.ex;
 
 public class AuthenticationException extends RuntimeException {
 

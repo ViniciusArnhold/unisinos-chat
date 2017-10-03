@@ -1,4 +1,4 @@
-package br.unisinos.socket.ex;
+package br.unisinos.server.socket.ex;
 
 public class CloseSocketException extends RuntimeException {
 

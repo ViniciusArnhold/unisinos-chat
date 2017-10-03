@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <BorderPane maxHeight="430.0" maxWidth="350.0" minHeight="430.0" minWidth="350.0" prefHeight="430.0" prefWidth="350.0"
             xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="br.unisinos.controler.LoginController">
+            fx:controller="br.unisinos.client.controler.LoginController">
     <right>
         <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
             <columnConstraints>

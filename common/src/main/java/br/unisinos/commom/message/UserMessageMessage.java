@@ -1,6 +1,6 @@
-package br.unisinos.message;
+package br.unisinos.commom.message;
 
-import br.unisinos.User;
+import br.unisinos.commom.User;
 
 import java.util.Objects;
 
