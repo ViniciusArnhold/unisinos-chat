@@ -1,0 +1,7 @@
+apply plugin: 'application'
+
+mainClassName = 'br.unisinos.Main'
+
+dependencies {
+    compile project(":java-chat-common")
+}

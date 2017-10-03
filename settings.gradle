@@ -1,0 +1,9 @@
+rootProject.name = 'java-chat'
+
+include 'client'
+include 'server'
+include 'common'
+
+rootProject.children.each {
+    it.name = "${rootProject.name}-${it.name}"
+}
