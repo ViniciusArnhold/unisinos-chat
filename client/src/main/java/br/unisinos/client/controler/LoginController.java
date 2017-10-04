@@ -1,16 +1,24 @@
 package br.unisinos.client.controler;
 
-import br.unisinos.commom.Constants;
-import br.unisinos.client.chat.ChatConnection;
+import br.unisinos.client.socket.ChatConnection;
 import br.unisinos.client.view.App;
+import br.unisinos.commom.Constants;
+import br.unisinos.commom.Util;
+import br.unisinos.commom.message.UserLoginMessage;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.Optional;
 
@@ -40,7 +48,7 @@ public class LoginController {
         String ip = serverIPField.getText();
         Optional<Integer> optPort = tryParseInt(serverPortField.getText());
         if (!optPort.isPresent()) {
-            showErrorDialog("Server Port is invalid!");
+            PlatformUtil.showErrorDialog("Server Port is invalid!");
             return;
         }
         int port = optPort.get();
@@ -51,30 +59,54 @@ public class LoginController {
         try {
             socket = new Socket(ip, port);
         } catch (IOException e) {
-            showErrorDialog("Could not connect to server: [" + e.getLocalizedMessage() + "]");
+            PlatformUtil.showErrorDialog("Could not connect to server: [" + e.getLocalizedMessage() + "]");
             return;
         }
 
-        handleAuth(socket);
+        UserLoginMessage userLoginMessage;
+        ObjectOutputStream out;
+        ObjectInputStream in;
+        try {
+            out = new ObjectOutputStream(socket.getOutputStream());
+            in = new ObjectInputStream(socket.getInputStream());
+            userLoginMessage = handleAuth(in, out, userName);
+        } catch (IOException | ClassNotFoundException e) {
+            PlatformUtil.showErrorDialog("Error: " + e.getMessage());
+            Util.closeSilently(socket);
+            return;
+        }
 
-        ChatConnection connection = new ChatConnection(socket, userName);
-        Thread thread = new Thread(connection, "Chat Thread");
+        if (userLoginMessage.getAuthError() != null) {
+            PlatformUtil.showErrorDialog("Error: " + userLoginMessage.getAuthError().getLocalizedMessage());
+            return;
+        }
 
-        thread.start();
+        FXMLLoader fmxlLoader = new FXMLLoader(getClass().getResource("/views/chat-view.fxml"));
+        try {
+            Parent window = (Pane) fmxlLoader.load();
+            Scene scene = new Scene(window);
+
+            ChatController controller = fmxlLoader.getController();
+            ChatConnection connection = new ChatConnection(controller, socket, in, out, userLoginMessage.getUser());
+            Thread thread = new Thread(connection, "Chat Thread");
+            thread.start();
+
+            controller.setConnection(connection);
+
+            Stage primartyStage = App.getPrimartyStage();
+
+            primartyStage.setScene(scene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    private void handleAuth(Socket socket) {
-    }
+    private UserLoginMessage handleAuth(ObjectInputStream in, ObjectOutputStream out, String userName) throws IOException, ClassNotFoundException {
+        out.writeObject(new UserLoginMessage(userName));
 
-    private void showErrorDialog(String msg) {
-        Platform.runLater(() -> {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Warning!");
-            alert.setHeaderText(msg);
-            alert.setContentText("Failed to Connect");
-            alert.showAndWait();
-        });
+        return (UserLoginMessage) in.readObject();
     }
 
     private Optional<Integer> tryParseInt(String text) {

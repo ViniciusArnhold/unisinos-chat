@@ -3,7 +3,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$USER_HOME$/Projects/Java/JavaFX-Chat/pom.xml" />
+        <option value="$PROJECT_DIR$/../JavaFX-Chat/pom.xml" />
       </list>
     </option>
   </component>

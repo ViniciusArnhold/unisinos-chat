@@ -10,7 +10,7 @@ public class DuplicateUserException extends AuthenticationException {
     private final User user;
 
     public DuplicateUserException(User user) {
-        super(user.getName());
+        super("Duplicate Username: " + user.getName());
         this.user = user;
     }
 

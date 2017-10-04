@@ -2,19 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$USER_HOME$/Projects/Java/JavaFX-Chat/JavaFx.iml" filepath="$USER_HOME$/Projects/Java/JavaFX-Chat/JavaFx.iml" />
-      <module fileurl="file://$USER_HOME$/Projects/Java/JavaFX-Chat/client/client.iml" filepath="$USER_HOME$/Projects/Java/JavaFX-Chat/client/client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/java-chat.iml" filepath="$PROJECT_DIR$/java-chat.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/java-chat-client.iml" filepath="$PROJECT_DIR$/.idea/modules/client/java-chat-client.iml" group="java-chat-client" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/java-chat-client_main.iml" filepath="$PROJECT_DIR$/.idea/modules/client/java-chat-client_main.iml" group="java-chat-client" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/java-chat-client_test.iml" filepath="$PROJECT_DIR$/.idea/modules/client/java-chat-client_test.iml" group="java-chat-client" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/java-chat-common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/java-chat-common.iml" group="java-chat-common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/java-chat-common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/java-chat-common_main.iml" group="java-chat-common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/java-chat-common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/java-chat-common_test.iml" group="java-chat-common" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/java-chat-server.iml" filepath="$PROJECT_DIR$/.idea/modules/server/java-chat-server.iml" group="java-chat-server" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/java-chat-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/server/java-chat-server_main.iml" group="java-chat-server" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/java-chat-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/server/java-chat-server_test.iml" group="java-chat-server" />
-      <module fileurl="file://$USER_HOME$/Projects/Java/JavaFX-Chat/server/server.iml" filepath="$USER_HOME$/Projects/Java/JavaFX-Chat/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JavaFX-Chat/JavaFx.iml" filepath="$PROJECT_DIR$/../JavaFX-Chat/JavaFx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JavaFX-Chat/client/client.iml" filepath="$PROJECT_DIR$/../JavaFX-Chat/client/client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../JavaFX-Chat/server/server.iml" filepath="$PROJECT_DIR$/../JavaFX-Chat/server/server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/unisinos-socket.iml" filepath="$PROJECT_DIR$/.idea/modules/unisinos-socket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/unisinos-socket-client.iml" filepath="$PROJECT_DIR$/.idea/modules/client/unisinos-socket-client.iml" group="unisinos-socket-client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/unisinos-socket-client_main.iml" filepath="$PROJECT_DIR$/.idea/modules/client/unisinos-socket-client_main.iml" group="unisinos-socket-client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/client/unisinos-socket-client_test.iml" filepath="$PROJECT_DIR$/.idea/modules/client/unisinos-socket-client_test.iml" group="unisinos-socket-client" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/unisinos-socket-common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/unisinos-socket-common.iml" group="unisinos-socket-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/unisinos-socket-common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/unisinos-socket-common_main.iml" group="unisinos-socket-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/unisinos-socket-common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/unisinos-socket-common_test.iml" group="unisinos-socket-common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/unisinos-socket-server.iml" filepath="$PROJECT_DIR$/.idea/modules/server/unisinos-socket-server.iml" group="unisinos-socket-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/unisinos-socket-server_main.iml" filepath="$PROJECT_DIR$/.idea/modules/server/unisinos-socket-server_main.iml" group="unisinos-socket-server" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server/unisinos-socket-server_test.iml" filepath="$PROJECT_DIR$/.idea/modules/server/unisinos-socket-server_test.iml" group="unisinos-socket-server" />
     </modules>
   </component>
 </project>

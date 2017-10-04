@@ -12,14 +12,20 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="client" target="1.8" />
-      <module name="java-chat-client_main" target="1.8" />
-      <module name="java-chat-client_test" target="1.8" />
-      <module name="java-chat-common_main" target="1.8" />
-      <module name="java-chat-common_test" target="1.8" />
-      <module name="java-chat-server_main" target="1.8" />
-      <module name="java-chat-server_test" target="1.8" />
       <module name="JavaFx" target="1.8" />
       <module name="server" target="1.8" />
+      <module name="unisinos-chat-client_main" target="1.8" />
+      <module name="unisinos-chat-client_test" target="1.8" />
+      <module name="unisinos-chat-common_main" target="1.8" />
+      <module name="unisinos-chat-common_test" target="1.8" />
+      <module name="unisinos-chat-server_main" target="1.8" />
+      <module name="unisinos-chat-server_test" target="1.8" />
+      <module name="unisinos-socket-client_main" target="1.8" />
+      <module name="unisinos-socket-client_test" target="1.8" />
+      <module name="unisinos-socket-common_main" target="1.8" />
+      <module name="unisinos-socket-common_test" target="1.8" />
+      <module name="unisinos-socket-server_main" target="1.8" />
+      <module name="unisinos-socket-server_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

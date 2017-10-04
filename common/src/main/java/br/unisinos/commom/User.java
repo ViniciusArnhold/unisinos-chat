@@ -1,11 +1,12 @@
 package br.unisinos.commom;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * @author Vinicius Pegorini Arnhold.
  */
-public class User {
+public class User implements Serializable {
 
     private final String name;
 
@@ -27,6 +28,11 @@ public class User {
         return name.hashCode();
     }
 
+    @Override
+    public String toString() {
+        return getName();
+    }
+
     public enum ConnectionStatus {
         VALID,
         CONNECTED,
@@ -36,7 +42,7 @@ public class User {
     public enum OnlineStatus {
         ONLINE,
         AWAY,
-        OCCUPIED,
+        BUSY,
         OFFLINE
     }
 

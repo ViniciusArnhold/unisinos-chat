@@ -1,5 +1,7 @@
 package br.unisinos.commom.log;
 
+import br.unisinos.commom.Constants;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -13,16 +15,15 @@ import java.util.logging.SimpleFormatter;
  */
 public class LoggerManager {
 
-    private static final LoggerManager INSTANCE = new LoggerManager();
-
     private static final String UNIQUE_LOGGER_NAME = "br.unisinos.UniqueLogger";
+    private static LoggerManager instance;
     private final Logger uniqueLogger;
 
 
     private LoggerManager() {
         this.uniqueLogger = Logger.getLogger(UNIQUE_LOGGER_NAME);
         try {
-            File file = new File(String.format("./log/%s.log", "unisinos-chat"));
+            File file = new File(String.format("./log/%s.log", System.getProperty(Constants.MAIN_CLASS_NAME_PROPERTY)));
             file.getParentFile().mkdirs();
             uniqueLogger.addHandler(new FormatedFileHandler(file.getAbsolutePath()));
         } catch (IOException e) {
@@ -35,7 +36,14 @@ public class LoggerManager {
     }
 
     private static LoggerManager getInstance() {
-        return INSTANCE;
+        if (instance == null) {
+            synchronized (LoggerManager.class) {
+                if (instance == null) {
+                    instance = new LoggerManager();
+                }
+            }
+        }
+        return instance;
     }
 
     public Logger getLoggerForClass(Class<?> self) {

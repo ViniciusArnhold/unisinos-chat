@@ -18,6 +18,11 @@ import java.util.logging.Logger;
  * @author Vinicius Pegorini Arnhold.
  */
 public class ServerMain {
+
+    static {
+        System.setProperty(Constants.MAIN_CLASS_NAME_PROPERTY, ServerMain.class.getName());
+    }
+
     public static void main(String[] args) {
         Logger logger = LoggerManager.getLogger(ServerMain.class);
         ThreadFactory threadFactory = new SocketThreadFactory();
@@ -34,7 +39,7 @@ public class ServerMain {
 
         try (ServerSocket socket = new ServerSocket(port)) {
 
-            logger.warning("Server OK!");
+            logger.warning(String.format("Server OK! Listening on [%s:%d]", socket.getInetAddress(), socket.getLocalPort()));
             while (true) {
                 Socket con = socket.accept();
 

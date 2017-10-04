@@ -1,4 +1,4 @@
-rootProject.name = 'java-chat'
+rootProject.name = 'unisinos-socket'
 
 include 'client'
 include 'server'

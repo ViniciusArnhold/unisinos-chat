@@ -1,57 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.*?>
-<BorderPane maxHeight="430.0" maxWidth="350.0" minHeight="430.0" minWidth="350.0" prefHeight="430.0" prefWidth="350.0"
-            xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="br.unisinos.controler.LoginController">
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="430.0" maxWidth="350.0" minHeight="430.0" minWidth="350.0" prefHeight="430.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.unisinos.client.controler.LoginController">
     <right>
         <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
             <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="325" minWidth="10.0"
-                                   prefWidth="100.0"/>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="325" minWidth="10.0"
-                                   prefWidth="230.0"/>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="325" minWidth="10.0"
-                                   prefWidth="100.0"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="325" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="325" minWidth="10.0" prefWidth="230.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="325" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints maxHeight="92.0" minHeight="10.0" prefHeight="17.0"/>
-                <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="101.0"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0"/>
+                <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="101.0" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" />
             </rowConstraints>
             <children>
-                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true"
-                           GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                     <image>
-                        <Image url="@../image/annon-user.png"/>
+                        <Image url="@../image/annon-user.png" />
                     </image>
                 </ImageView>
-                <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2">
-                    <children>
-                        <Button mnemonicParsing="false" text="Min" onAction="#minimize"/>
-                        <Button mnemonicParsing="false" onAction="#exitProgram" text="Exit"/>
-                    </children>
-                </HBox>
-                <TextField fx:id="usernameField" alignment="CENTER" promptText="Username" GridPane.columnIndex="1"
-                           GridPane.rowIndex="2"/>
-                <Label text="Server" textAlignment="CENTER" textFill="#1f93ff" GridPane.columnIndex="1"
-                       GridPane.halignment="CENTER" GridPane.rowIndex="3"/>
-                <TextField fx:id="serverIPField" alignment="CENTER" promptText="Server IP" GridPane.columnIndex="1"
-                           GridPane.rowIndex="4"/>
-                <TextField fx:id="serverPortField" alignment="CENTER" promptText="Server Port" GridPane.columnIndex="1"
-                           GridPane.rowIndex="5"/>
-                <Button fx:id="loginBtn" mnemonicParsing="false" text="Login" GridPane.columnIndex="1" onAction="#onLogin"
-                        GridPane.rowIndex="6"/>
-                <Label text="Java Chat" textFill="DODGERBLUE" GridPane.columnIndex="1" GridPane.halignment="CENTER"
-                       GridPane.rowIndex="7"/>
+                <TextField fx:id="usernameField" alignment="CENTER" promptText="Username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Server" textAlignment="CENTER" textFill="#1f93ff" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                <TextField fx:id="serverIPField" alignment="CENTER" promptText="Server IP" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="serverPortField" alignment="CENTER" promptText="Server Port" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLogin" text="Login" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <Label text="Unisinos Chat" textFill="DODGERBLUE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
             </children>
         </GridPane>
     </right>

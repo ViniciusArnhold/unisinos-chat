@@ -3,5 +3,5 @@ apply plugin: 'application'
 mainClassName = 'br.unisinos.client.ChatMain'
 
 dependencies {
-    compile project(":java-chat-common")
+    compile project(":unisinos-socket-common")
 }
