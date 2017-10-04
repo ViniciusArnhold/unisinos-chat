@@ -168,7 +168,7 @@ public class ChatController {
     }
 
     public String getDateString() {
-        return DateTimeFormatter.ISO_LOCAL_DATE.format(ZonedDateTime.now());
+        return DateTimeFormatter.ISO_LOCAL_TIME.format(ZonedDateTime.now());
     }
 
     public ImageView getDefaultImageView() {
