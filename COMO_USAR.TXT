@@ -1,0 +1,8 @@
+Iniciar o server:
+
+Executar ./dist/unisinos-chat-server/bin/unisinos-chat-server
+#Caso queira utilizar uma porta especifica passar como parametro: unisinos-chat-server.sh 9002
+
+Iniciar um cliente:
+
+Executar ./dist/unisinos-chat-client/bin/unisinos-chat-client

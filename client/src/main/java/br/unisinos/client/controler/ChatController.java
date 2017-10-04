@@ -61,7 +61,6 @@ public class ChatController {
             onlineSatusComboBox.getItems().clear();
             onlineSatusComboBox.getItems().addAll(User.OnlineStatus.values());
         });
-
     }
 
     public void onMessageSend() {
