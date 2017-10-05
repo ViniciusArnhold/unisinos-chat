@@ -6,3 +6,9 @@ Executar ./dist/unisinos-chat-server/bin/unisinos-chat-server
 Iniciar um cliente:
 
 Executar ./dist/unisinos-chat-client/bin/unisinos-chat-client
+
+Caso queirar buildar da source: 
+
+Na root:
+./gradlew installDist #Vai construir o cliente e servidor em <client,server>/build/install/*
+#Vai automaticamente baixar o sistema de build gradle, ~79mb, não instala nada no sistema.
